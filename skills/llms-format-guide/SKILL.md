@@ -1,25 +1,6 @@
 ---
-version: 1.0.0
-when_to_use: |
-  Use this skill when you need to understand or create an llms.txt file. Perfect for:
-  - "What is llms.txt and how do I create one?"
-  - "Show me llms.txt format and structure"
-  - "How do I write a good llms.txt file?"
-  - "What are best practices for llms.txt?"
-  - "Help me optimize llms.txt for token efficiency"
-  - "Compare my llms.txt to the spec"
-
-trigger_phrases:
-  - "llms.txt format"
-  - "how to create llms.txt"
-  - "llms.txt structure"
-  - "llms.txt best practices"
-  - "llms.txt optimization"
-  - "llms.txt specification"
-  - "what is llms.txt"
-
-progressive_disclosure: true
-internal: false
+name: llms-format-guide
+description: Guide for understanding and creating llms.txt files - format specification, best practices, and token optimization
 ---
 
 # llms.txt Format Guide

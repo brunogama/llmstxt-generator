@@ -1,26 +1,6 @@
 ---
-version: 1.0.0
-when_to_use: |
-  Use this skill when you need help with Ollama setup and model selection for llms.txt generation:
-  - "How do I install Ollama?"
-  - "What Ollama model should I use?"
-  - "How do I run Ollama locally?"
-  - "Which model is best for llms.txt generation?"
-  - "How to connect to Ollama from a script?"
-  - "Troubleshoot Ollama connection issues"
-  - "What's the difference between Ollama models?"
-
-trigger_phrases:
-  - "ollama installation"
-  - "ollama models"
-  - "ollama setup"
-  - "which model for"
-  - "ollama local"
-  - "ollama api"
-  - "ollama connection"
-
-progressive_disclosure: true
-internal: false
+name: ollama-integration
+description: Guide for Ollama setup, model selection, and integration for llms.txt generation
 ---
 
 # Ollama Integration Guide
