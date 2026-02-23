@@ -1,0 +1,112 @@
+{
+  "hooks": [
+    {
+      "event": "post-commit",
+      "id": "auto-regenerate-llmstxt",
+      "description": "Auto-regenerate llms.txt if documentation files change and llms.txt already exists",
+      "enabled": true,
+      "type": "prompt",
+      "when": "User has committed changes",
+      "condition": "Detect if documentation files (.md, .html, code docstrings) were modified AND llms.txt already exists",
+      "promptFormat": "markdown",
+      "prompt": "## 📝 Documentation Changed\n\nI detected changes to documentation files in your last commit:\n\n**Files modified:**\n- {MODIFIED_DOC_FILES}\n\nYour `llms.txt` file ({LLMS_TXT_PATH}) might be outdated.\n\n**Options:**\n1. **Regenerate** - Update llms.txt to reflect current docs: `/llmstxt:generate`\n2. **Validate** - Check current quality and get suggestions: `/llmstxt:validate`\n3. **Skip** - Remind me later\n4. **Auto-mode** - Always auto-regenerate (set in config)\n\n**Why?**\nRegularly updating llms.txt ensures your AI tools (Claude Code, Cursor) have accurate context about your documentation.\n\n---\n**Tip:** Auto-regenerate on every commit by setting `auto_commit_regenerate: true` in `.claude/llmstxt-generator.local.md`",
+      "allowsUserResponse": true,
+      "responseMapping": {
+        "regenerate": "/llmstxt:generate",
+        "validate": "/llmstxt:validate",
+        "skip": "do-nothing",
+        "auto-mode": "enable-auto-regenerate"
+      },
+      "autoActions": {
+        "if": "config.auto_commit_regenerate === true",
+        "then": "run /llmstxt:generate silently"
+      },
+      "conditions": {
+        "checkFiles": [
+          "**/*.md",
+          "docs/**",
+          "documentation/**",
+          "**/README.md",
+          "**/CHANGELOG.md"
+        ],
+        "ignorePaths": [
+          "node_modules/**",
+          ".git/**",
+          "build/**",
+          "dist/**",
+          ".next/**"
+        ],
+        "requireLlmsExists": true,
+        "minimumChanges": 1,
+        "checkGitDiff": true
+      },
+      "metadata": {
+        "version": "0.1.0",
+        "category": "documentation",
+        "frequency": "post-commit",
+        "noiseLevel": "low",
+        "configurable": true
+      }
+    }
+  ],
+  "configuration": {
+    "autoCommitRegenerate": {
+      "type": "boolean",
+      "default": false,
+      "description": "Automatically regenerate llms.txt on every commit if docs change",
+      "configFile": ".claude/llmstxt-generator.local.md",
+      "configKey": "auto_commit_regenerate"
+    },
+    "promptOnDocs": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show prompt asking to regenerate when docs change",
+      "configFile": ".claude/llmstxt-generator.local.md",
+      "configKey": "prompt_on_doc_changes"
+    },
+    "minimumFileChanges": {
+      "type": "integer",
+      "default": 1,
+      "description": "Minimum number of doc files changed to trigger check",
+      "configFile": ".claude/llmstxt-generator.local.md",
+      "configKey": "min_changes_for_prompt"
+    },
+    "pathPatterns": {
+      "type": "array",
+      "default": [
+        "**/*.md",
+        "docs/**",
+        "documentation/**",
+        "**/README.md"
+      ],
+      "description": "Glob patterns for files that trigger the hook",
+      "configFile": ".claude/llmstxt-generator.local.md",
+      "configKey": "watch_paths"
+    },
+    "ignorePaths": {
+      "type": "array",
+      "default": [
+        "node_modules/**",
+        ".git/**",
+        "build/**",
+        "dist/**",
+        ".next/**",
+        "*.llms.txt"
+      ],
+      "description": "Glob patterns to ignore when checking for doc changes",
+      "configFile": ".claude/llmstxt-generator.local.md",
+      "configKey": "ignore_paths"
+    }
+  },
+  "usage": {
+    "manual": "Hooks fire automatically after git commit",
+    "configuration": "Create .claude/llmstxt-generator.local.md with settings",
+    "disable": "Set enabled: false in hooks.json or disable via config file"
+  },
+  "examples": {
+    "config": {
+      "description": "Example .claude/llmstxt-generator.local.md",
+      "content": "# llmstxt-generator Hook Configuration\n\n## Post-Commit Hook Settings\n- auto_commit_regenerate: false  # Set to true for automatic refresh\n- prompt_on_doc_changes: true    # Show prompt when docs change\n- min_changes_for_prompt: 1      # Minimum files changed to trigger\n\n## Paths to Watch\n- watch_paths:\n  - \"**/*.md\"\n  - \"docs/**\"\n  - \"documentation/**\"\n\n## Paths to Ignore\n- ignore_paths:\n  - \"node_modules/**\"\n  - \".git/**\"\n  - \"build/**\"\n  - \"dist/**\""
+    }
+  }
+}

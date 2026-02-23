@@ -1,0 +1,32 @@
+{
+  "name": "llmstxt-generator",
+  "version": "0.1.0",
+  "description": "Intelligent llms.txt file generator with Ollama integration. Auto-generates, validates, and maintains llms.txt files for documentation sites using local LLM models.",
+  "author": {
+    "name": "Claude Code Community",
+    "email": "community@claude-code.dev"
+  },
+  "keywords": [
+    "llmstxt",
+    "documentation",
+    "ollama",
+    "ai-optimization",
+    "content-generation"
+  ],
+  "homepage": "https://github.com/anthropics/claude-code-plugins",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anthropics/claude-code-plugins"
+  },
+  "license": "MIT",
+  "engines": {
+    "claudeCode": ">=1.0.0"
+  },
+  "components": {
+    "skills": 2,
+    "commands": 3,
+    "agents": 1,
+    "hooks": 1,
+    "pythonScripts": 1
+  }
+}
