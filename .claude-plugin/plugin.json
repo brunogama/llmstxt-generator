@@ -3,64 +3,15 @@
   "version": "0.1.0",
   "description": "Intelligent llms.txt file generator with Ollama integration. Auto-generates, validates, and maintains llms.txt files for documentation sites using local LLM models.",
   "author": {
-    "name": "Claude Code Community",
-    "email": "community@claude-code.dev"
+    "name": "Claude Code Community"
   },
+  "license": "MIT",
+  "repository": "https://github.com/brunogama/llmstxt-generator",
   "keywords": [
     "llmstxt",
     "documentation",
     "ollama",
     "ai-optimization",
     "content-generation"
-  ],
-  "homepage": "https://github.com/brunogama/llmstxt-generator",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/brunogama/llmstxt-generator"
-  },
-  "license": "MIT",
-  "engines": {
-    "claudeCode": ">=1.0.0"
-  },
-  "commands": [
-    {
-      "name": "llmstxt",
-      "subcommands": [
-        {
-          "name": "generate",
-          "description": "Generate an llms.txt file for a project with interactive guidance",
-          "path": "commands/generate.md"
-        },
-        {
-          "name": "validate",
-          "description": "Validate and score an existing llms.txt file",
-          "path": "commands/validate.md"
-        },
-        {
-          "name": "edit",
-          "description": "Edit an existing llms.txt file with guided workflows",
-          "path": "commands/edit.md"
-        }
-      ]
-    }
-  ],
-  "skills": [
-    {
-      "name": "llms-format-guide",
-      "description": "Comprehensive guide to llms.txt format, best practices, and token optimization",
-      "path": "skills/llms-format-guide.md"
-    },
-    {
-      "name": "ollama-integration",
-      "description": "Setup and usage guide for Ollama model selection and integration",
-      "path": "skills/ollama-integration.md"
-    }
-  ],
-  "agents": [
-    {
-      "name": "llmstxt-analyzer",
-      "description": "Proactively analyzes project documentation and suggests generating or enhancing llms.txt files",
-      "path": "agents/llmstxt-analyzer.md"
-    }
   ]
 }
