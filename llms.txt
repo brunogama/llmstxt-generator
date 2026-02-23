@@ -1,0 +1,32 @@
+# llmstxt-generator
+
+> Claude Code plugin for auto-generating, validating, and maintaining llms.txt files using local Ollama LLM models. Implements the llmstxt.org specification proposed by Jeremy Howard (Answer.AI).
+
+## Quick Start
+
+- [Quick Start Guide](QUICKSTART.md): 5-minute setup for Ollama and first generation
+- [Full Documentation](README.md): Installation, configuration, and usage
+
+## Commands
+
+- [/llmstxt:generate](commands/generate.md): Interactive generation with project analysis
+- [/llmstxt:validate](commands/validate.md): Format compliance, link checking, quality scoring
+- [/llmstxt:edit](commands/edit.md): Text editor or interactive CLI menu editing
+
+## Skills
+
+- [llms-format-guide](skills/llms-format-guide.md): Comprehensive llms.txt format and best practices
+- [ollama-integration](skills/ollama-integration.md): Ollama setup, models, and configuration
+
+## Agent
+
+- [llmstxt-analyzer](agents/llmstxt-analyzer.md): Proactive documentation analyzer
+
+## Scripts
+
+- [generate_llmstxt.py](scripts/generate_llmstxt.py): Python generation engine with Ollama client
+
+## Optional
+
+- [llms.txt Specification](https://llmstxt.org): Official format spec from Answer.AI
+- [Ollama](https://ollama.ai): Local LLM runtime installation
