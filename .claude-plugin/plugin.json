@@ -13,20 +13,54 @@
     "ai-optimization",
     "content-generation"
   ],
-  "homepage": "https://github.com/anthropics/claude-code-plugins",
+  "homepage": "https://github.com/brunogama/llmstxt-generator",
   "repository": {
     "type": "git",
-    "url": "https://github.com/anthropics/claude-code-plugins"
+    "url": "https://github.com/brunogama/llmstxt-generator"
   },
   "license": "MIT",
   "engines": {
     "claudeCode": ">=1.0.0"
   },
-  "components": {
-    "skills": 2,
-    "commands": 3,
-    "agents": 1,
-    "hooks": 1,
-    "pythonScripts": 1
-  }
+  "commands": [
+    {
+      "name": "llmstxt",
+      "subcommands": [
+        {
+          "name": "generate",
+          "description": "Generate an llms.txt file for a project with interactive guidance",
+          "path": "commands/generate.md"
+        },
+        {
+          "name": "validate",
+          "description": "Validate and score an existing llms.txt file",
+          "path": "commands/validate.md"
+        },
+        {
+          "name": "edit",
+          "description": "Edit an existing llms.txt file with guided workflows",
+          "path": "commands/edit.md"
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "llms-format-guide",
+      "description": "Comprehensive guide to llms.txt format, best practices, and token optimization",
+      "path": "skills/llms-format-guide.md"
+    },
+    {
+      "name": "ollama-integration",
+      "description": "Setup and usage guide for Ollama model selection and integration",
+      "path": "skills/ollama-integration.md"
+    }
+  ],
+  "agents": [
+    {
+      "name": "llmstxt-analyzer",
+      "description": "Proactively analyzes project documentation and suggests generating or enhancing llms.txt files",
+      "path": "agents/llmstxt-analyzer.md"
+    }
+  ]
 }
