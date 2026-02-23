@@ -6,11 +6,6 @@ allowed-tools:
   - Write
   - Edit
   - Bash
-
-tool-restrictions: |
-  - Read/Write: Load and save llms.txt file
-  - Edit: Interactive text editing
-  - Bash: Open in $EDITOR, validate format
 ---
 
 # /llmstxt:edit

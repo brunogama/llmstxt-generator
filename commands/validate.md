@@ -5,11 +5,6 @@ allowed-tools:
   - Read
   - Bash
   - Grep
-
-tool-restrictions: |
-  - Read: Parse llms.txt file
-  - Bash: Run validation checks, test link accessibility
-  - Grep: Analyze format compliance
 ---
 
 # /llmstxt:validate

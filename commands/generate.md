@@ -8,12 +8,6 @@ allowed-tools:
   - Glob
   - Grep
   - Task
-
-tool-restrictions: |
-  - Bash: Used for running Python script, checking project structure, validating Ollama connection
-  - Task: Used to spawn Python execution agent for generation
-  - Read/Write: For reviewing and saving generated files
-  - Glob/Grep: For analyzing project documentation structure
 ---
 
 # /llmstxt:generate
